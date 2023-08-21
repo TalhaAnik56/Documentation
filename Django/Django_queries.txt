@@ -1,0 +1,46 @@
+Queries:
+
+Product.objects.get(id=1)  #This will throw an exception ObjectDoesNotExist if product is not found.
+
+Product.objects.filter(id=1) #This will not throw an exception if product is not found,it that's the case it will return none.
+
+Product.objects.filter(id=1).first() #Returns the first object, otherwise none.
+
+Product.objects.filter(id=1).exists() #Return a boolean value like true or false.
+
+Product.objects.filter(unit_price__gt=20) #There are gt,gte,lt,lte,range=(20,30)
+
+Product.objects.filter(collection__id__between=(1,2,3)) #If collection id is between 1,2,3 it will return those objects.
+
+Product.objects.filter(title__startswith='coffee') #There are icontains,endswith as well
+
+Product.objects.filter(last_update__year=2021) #Return all the objects which are updated in 2021.We can use months,days and so on)
+
+Product.objects.all().order_by('title','-unit_price') #Order by title in ascending order and if same title appears then order by unit price in descending order
+
+Product.objects.order_by('title')[0]  #Simply returns the first object after ordering by title in ascending order
+
+Product.objects.earliest('title')  #Simply returns the first object after ordering by title in descending order
+
+Product.objects.latest('title')  #Simply returns the first object after ordering by title in descending order
+
+
+
+
+
+AND OR:
+
+Product.objects.filter(inventory__lt=10,unit_price__lt=20) #Works like AND
+
+Product.objects.filter(inventory__lt=10).filter(unit_price__lt=20) #Also works like AND
+
+Product.objects.filter(Q(inventory__lt=10) & Q(unit_price__lt=20)) #Also Works like AND
+
+Product.objects.filter(Q(inventory__lt=10) & ~Q(unit_price__lt=20)) #Here by '~' we mean that NOT.
+
+Product.objects.filter(Q(inventory__lt=10) | Q(unit_price__lt=20)) #Works like OR
+
+ 
+
+ 
+ 
