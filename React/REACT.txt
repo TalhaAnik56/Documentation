@@ -1,5 +1,13 @@
 1.<Hstack> is used to place childs horizontally.
 2.<Image src={logo} /> here, source is not just a link,it should be imported. Example: import logo from '../assests/logo.webp'
-3.
 
-GITHUB e agula upload korte hobe Documentation akare
+3.This is called index signature. This represents a key or property in this object.
+
+	const icons:{ [key:string]: Icontype }={
+						web:BsGlobe,
+						android:FaAndroid
+						}
+
+If we declare our object like this we will be able to call it like: 
+								icons[web]  it will give us BsGlobe
+								icons[platform.slug] it will give us BsGlobe if the value of 								platform.slug is 'web'
