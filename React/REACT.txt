@@ -9,5 +9,24 @@
 						}
 
 If we declare our object like this we will be able to call it like: 
-								icons[web]  it will give us BsGlobe
-								icons[platform.slug] it will give us BsGlobe if the value of 								platform.slug is 'web'
+						icons[web]  ;it will give us BsGlobe
+						icons[platform.slug] ;it will give us BsGlobe if the value of 								platform.slug is 'web'
+
+
+
+4.This is called generic type parameter.
+	const useData=<T>(string:endpoint)=>{
+					     const [data,setData]=useState<T[]>([])
+					     }
+
+The function calling will be like: useData<Game>('/games')  ;here Game is a interface,we can pass the interface using this generic paramter style. 	
+
+
+
+5.We can also use generic type parameter in interfaces.
+Example: 
+	interface FetchResponse<T>{
+				   count:number;
+				   results:T[]
+				   } 
+
