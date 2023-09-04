@@ -30,3 +30,30 @@ Example:
 				   results:T[]
 				   } 
 
+
+6.<Menu /> is a component in Chakra that we can use to make a beautiful drop down list.
+
+
+7.Always use <Grid> <GridItem> </Grid> for making layouts.
+
+
+8.You can also use <SimpleGrid /> for maintaining cards in a specific space properly.
+
+
+9.Use <HStack/> to keep children horizontally.
+
+
+10.Using chakra UI, if you want to set the background image/color of the entire body:
+const theme = extendTheme({
+		  	   styles:{
+		               global:{
+				   body:{
+				      backgroundImage:'url(src/assets/background.jpg)',
+                                      backgroundSize:'cover',
+                                      backgroundRepeat:'no-repeat'
+					 } 
+      				       }
+                                   } 
+                            })
+
+11. 
