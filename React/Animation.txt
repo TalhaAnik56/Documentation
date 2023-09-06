@@ -1,0 +1,54 @@
+import { Button, Container, chakra, shouldForwardProp } from "@chakra-ui/react";
+import { motion, isValidMotionProp } from "framer-motion";
+import IntroAnimation from "./IntroAnimation";
+
+
+//just make the ChakraBox.Don't need to understand anything.Think of this ChakraBox as motion.div of Framer/
+const ChakraBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
+
+
+
+const Animation = () => {
+
+  //gives us the width of the screen we are watching.
+  const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  return (
+    <Container
+      h="400px"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+
+      <ChakraBox
+        // initial={{ opacity: 0 }}
+        // whileInView={{ opacity: 1 }}
+        // viewport={{ once: true }}
+
+        animate={{
+          // x:[viewportWidth, 0], //the animation will be started from the viewportWidth(some value, like:100px) and end at it's orginal position.(In X axis)          	  y:[viewportWidth,-50,0]  //the animation will be started from the viewportWidth(some value, like:100px) and end at it's orginal position.(In Y axis) 
+          // scale:[1,2,1]         //if X is the original size of the component,then during the animation it will be 1X,2X,1X respectively. 
+        }}
+        // @ts-ignore no problem in operation, although type error appears.
+        transition={{
+          duration: 2.5,         //if the animation is lagging,then increase the duration.Hope it will help
+          // ease: "easeOut",    //don't get so bothered,probably you won't use this.
+          // repeat: Infinity,   //don't get so bothered,probably you won't use this. The animation will be repeated infinite times.
+          // repeatType: "loop", //don't get so bothered,probably you won't use this. The animation will be repeated in a loop.
+        }}
+        whileHover={{ scale: 1.2 }}                //during hovering the size will be 1.2X
+        whileTap={{ scale: 0.9 }}                  //during tapping the size will be 0.9X
+	drag="x"                                   //you can move the component in X axis by clicking on it.
+  	dragConstraints={{ left: 0, right: 300 }}  //how much you can move.
+      >
+        <IntroAnimation></IntroAnimation>    //nothing but a component,you can use photo,button,text or whatever you want.
+      </ChakraBox>
+    </Container>
+  );
+};
+
+export default Animation;
