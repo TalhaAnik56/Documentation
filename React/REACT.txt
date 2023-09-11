@@ -1,59 +1,28 @@
-1.<Hstack> is used to place childs horizontally.
-2.<Image src={logo} /> here, source is not just a link,it should be imported. Example: import logo from '../assests/logo.webp'
-
-3.This is called index signature. This represents a key or property in this object.
+1.This is called index signature. This represents a key or property in this object.
 
 	const icons:{ [key:string]: Icontype }={
 						web:BsGlobe,
 						android:FaAndroid
 						}
-
 If we declare our object like this we will be able to call it like: 
 						icons[web]  ;it will give us BsGlobe
 						icons[platform.slug] ;it will give us BsGlobe if the value of 								platform.slug is 'web'
 
 
 
-4.This is called generic type parameter.
+2.This is called generic type parameter.
 	const useData=<T>(string:endpoint)=>{
 					     const [data,setData]=useState<T[]>([])
 					     }
-
 The function calling will be like: useData<Game>('/games')  ;here Game is a interface,we can pass the interface using this generic paramter style. 	
 
 
 
-5.We can also use generic type parameter in interfaces.
+3.We can also use generic type parameter in interfaces.
 Example: 
 	interface FetchResponse<T>{
 				   count:number;
 				   results:T[]
 				   } 
 
-
-6.<Menu /> is a component in Chakra that we can use to make a beautiful drop down list.
-
-
-7.Always use <Grid> <GridItem> </Grid> for making layouts.
-
-
-8.You can also use <SimpleGrid /> for maintaining cards in a specific space properly.
-
-
-9.Use <HStack/> to keep children horizontally.
-
-
-10.Using chakra UI, if you want to set the background image/color of the entire body:
-const theme = extendTheme({
-		  	   styles:{
-		               global:{
-				   body:{
-				      backgroundImage:'url(src/assets/background.jpg)',
-                                      backgroundSize:'cover',
-                                      backgroundRepeat:'no-repeat'
-					 } 
-      				       }
-                                   } 
-                            })
-
-11. 
+4.
