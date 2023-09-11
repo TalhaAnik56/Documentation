@@ -1,0 +1,24 @@
+NUMPY----
+arr=numpy.array()
+arr.itemsize
+arr.size
+arr.arange(start,stop before,difference)
+arr.linspace(start,stop with,number of items)
+arr.shape
+arr.ones((shape))
+arr.zeroes((shape))
+arr.reshape((shape))
+arr.ravel()
+arr.min()
+arr.max()
+axis=0 means the columns
+axis=1 meanse the rows
+numpy.sqrt(arr)
+numpy.std(arr)
+numpy.vstack((arr,brr))
+numpy.hstack((arr,brr))
+arr[0:2,1:3] ->Doing indexing
+numpy.nditer(arr,order="C")
+numpy.nditer(arr,order="F")
+
+all these functions will not touch the main array.The functions will return a new array. Learned from which CodeBasics youtube channel.
