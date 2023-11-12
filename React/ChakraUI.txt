@@ -30,4 +30,16 @@ const theme = extendTheme({
 10.const isMobile = useBreakpointValue({ base: true, md: false }); //to find out if we are on mobile screen? Import UseBreakpointValue from '@chakra-ui/react'
    const isDesktop = useBreakpointValue({ base: false, md: true });//to find out if we are on desktop screen? Import UseBreakpointValue from '@chakra-ui/react'
 
-11.
+11.To measure the viewport width:
+const viewportWidth =
+    window.innerWidth || document.documentElement.clientWidth;
+
+12.To have hover effect in Chakra:
+   <Box _hover={{
+      transform:'scale(1.05)',
+      transition:'transform .15s ease-in'
+    }}>
+        {children}
+   </Box>
+
+13.

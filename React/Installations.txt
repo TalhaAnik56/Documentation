@@ -1,0 +1,13 @@
+
+1.For installing react query:
+npm i @tanstack/react-query@4.28
+
+2.For installing react query devtool:
+npm i @tanstack/react-query-devtools@4.28
+
+3.For installing React Router:
+npm i react-router-dom@6.10.0
+// Then set up router provider in main.tsx file.
+
+4.For installing zustand:
+npm i zustand@4.3.7

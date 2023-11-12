@@ -25,4 +25,31 @@ Example:
 				   results:T[]
 				   } 
 
-4.
+
+
+4.Exporting in a efficient way:
+In index.ts file of tasks folder
+export {default as TaskList} from "./TaskList";
+//aitar mane hocche ./TaskList file theke default je object ta export kora hocche shei object ta amra TaskList name e ai file theke export kortechi.
+
+
+
+5.
+interface GameQuery {
+  genreId?: number; //same thing like this genre: Genre | undefined;
+  platformId?: number;
+  sortOrder?: string ;
+  searchText?: string ;
+}
+
+const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+  // {} as GameQuery means {genreId:undefined,platformId:undefined,sortOrder:null,searchText:null}
+
+
+6.To make a button to go to another page using react router dom:
+<Link to={""}>
+<Logo/>
+</Link>
+
+in function use navigate function.
+
